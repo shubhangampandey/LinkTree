@@ -1,117 +1,133 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Linktree — Link Page</title>
-  <meta name="description" content="All your important links in one place — Linktree style page for GitHub Pages." />
-  <meta property="og:title" content="Your Name — Links" />
-  <meta property="og:description" content="Find my social profiles, projects and contact links." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shubhangam Pandey - Links</title>
   <style>
-    :root{
-      --bg:#0f1724; /* dark navy */
-      --card:#0b1220;
-      --accent:#06b6d4; /* teal */
-      --muted:#94a3b8;
-      --button:#0ea5a4;
-      --maxw:720px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #111, #222);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    html,body{height:100%;margin:0}
-    body{
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.06), transparent),
-                  radial-gradient(900px 400px at 90% 90%, rgba(99,102,241,0.04), transparent),
-                  var(--bg);
-      color: #e6eef8;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:32px;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+
+    .container {
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      padding: 20px;
+      background: #1a1a1a;
+      border-radius: 15px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.5);
     }
-    .wrap{
-      width:100%;
-      max-width:var(--maxw);
-      text-align:center;
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
     }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.04);
-      border-radius:16px;
-      padding:32px 26px;
-      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+
+    h1 {
+      font-size: 22px;
+      margin: 15px 0 5px;
     }
-    .avatar{
-      width:112px;height:112px;border-radius:999px;display:inline-block;overflow:hidden;border:3px solid rgba(255,255,255,0.06);
-      margin-bottom:16px;
+
+    p {
+      font-size: 14px;
+      color: #bbb;
+      margin: 0 0 15px;
+      line-height: 1.5;
     }
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    h1{margin:6px 0 4px;font-size:20px}
-    p.bio{margin:0;color:var(--muted);font-size:14px}
-    .links{margin-top:20px;display:flex;flex-direction:column;gap:12px}
-    .link-btn{
-      display:flex;align-items:center;gap:12px;justify-content:center;padding:12px 16px;border-radius:12px;text-decoration:none;color:inherit;font-weight:600;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);
-      transition:transform .12s ease, box-shadow .12s ease;
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    .link-btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(2,6,23,0.6)}
-    .icon{width:20px;height:20px;opacity:0.95;display:inline-block}
-    .small{font-size:13px;color:var(--muted)}
-    .footer{margin-top:18px;color:var(--muted);font-size:13px}
-    /* Responsive tweaks */
-    @media (max-width:420px){
-      .card{padding:22px}
-      .avatar{width:92px;height:92px}
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      color: white;
+      background: #000;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .link-btn:hover {
+      background: #444;
+      transform: scale(1.05);
+    }
+
+    .social-icons {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 22px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #1da1f2;
+    }
+
+    .qr {
+      margin-top: 20px;
+    }
+
+    .qr img {
+      width: 100px;
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card" aria-label="Linktree style landing">
-      <a href="https://linktr.ee/yourname" target="_blank" rel="noopener noreferrer" aria-hidden="true" style="display:inline-block;margin-bottom:10px">
-        <div class="avatar">
-          <!-- Replace with your profile image URL -->
-          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c3f2d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Profile image">
-        </div>
-      </a>
+  <div class="container">
+    <img src="your-photo.jpg" alt="Profile" class="profile-img">
+    <h1>Shubhangam Pandey</h1>
+    <p>
+      Full Stack Intern @ Kajkarma Innovations Pvt. Ltd.<br>
+      MERN & Java Full-Stack Developer | DevOps Enthusiast<br>
+      CSE Sophomore, Vellore Institute of Technology
+    </p>
 
-      <h1>Your Name</h1>
-      <p class="bio">Short bio — developer · designer · creator</p>
+    <div class="social-icons">
+      <a href="https://github.com/" target="_blank">🐙</a>
+      <a href="https://x.com/" target="_blank">✖</a>
+      <a href="https://linkedin.com/" target="_blank">🔗</a>
+    </div>
 
-      <nav class="links" aria-label="Primary links">
-        <!-- Replace href values with your actual links -->
-        <a class="link-btn" href="https://linktr.ee/yourname" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Linktree
-        </a>
+    <div class="links">
+      <a href="https://github.com/" target="_blank" class="link-btn">GitHub - Profile</a>
+      <a href="https://portfolio.com/" target="_blank" class="link-btn">Portfolio - Profile</a>
+      <a href="https://leetcode.com/" target="_blank" class="link-btn">LeetCode - Profile</a>
+      <a href="https://linkedin.com/" target="_blank" class="link-btn">LinkedIn - Profile</a>
+      <a href="https://x.com/" target="_blank" class="link-btn">X.com (Twitter) - Profile</a>
+    </div>
 
-        <a class="link-btn" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.87 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.01-2-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.3-1.69-1.3-1.69-1.06-.72.08-.71.08-.71 1.18.09 1.8 1.21 1.8 1.21 1.04 1.78 2.72 1.27 3.39.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.11-3.16 0 0 .98-.31 3.2 1.19a11.12 11.12 0 0 1 2.92-.39c.99.01 1.99.13 2.92.39 2.22-1.5 3.2-1.19 3.2-1.19.63 1.64.23 2.86.11 3.16.75.81 1.2 1.84 1.2 3.1 0 4.44-2.7 5.41-5.27 5.7.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.2.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
-          GitHub
-        </a>
-
-        <a class="link-btn" href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.48c0 1.1.88 1.98 1.98 1.98h.02C6.08 7.46 6.96 6.58 6.96 5.48 6.96 4.38 6.08 3.5 4.98 3.5zM3.5 8.98h3v11h-3v-11zM9.48 8.98h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6v6.46h-3v-5.72c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.19 1.48-2.19 3v5.82h-3v-11z"/></svg>
-          LinkedIn
-        </a>
-
-        <a class="link-btn" href="mailto:youremail@example.com" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.5h18v11H3z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6.5L12 13 3 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Email
-        </a>
-
-        <a class="link-btn" href="https://www.yoursite.com/resume.pdf" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/></svg>
-          Resume / CV
-        </a>
-      </nav>
-
-      <div class="footer small">
-        Tip: Replace all <code>href</code> and the profile image with your own links before publishing.
-      </div>
-    </section>
-
-    <p style="text-align:center;margin-top:14px;color:var(--muted);font-size:13px">Hosted on GitHub Pages — place this file at <code>index.html</code> in the repository root (or in <code>docs/</code>), then enable GitHub Pages.</p>
-  </main>
+    <div class="qr">
+      <img src="qr-code.png" alt="QR Code">
+    </div>
+  </div>
 </body>
 </html>
+```
