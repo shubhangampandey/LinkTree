@@ -3,102 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Shubhangam Pandey • Links</title>
-  <meta name="description" content="All my important links in one place — Linktree style." />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <title>Your Linktree — Link Page</title>
+  <meta name="description" content="All your important links in one place — Linktree style page for GitHub Pages." />
+  <meta property="og:title" content="Your Name — Links" />
+  <meta property="og:description" content="Find my social profiles, projects and contact links." />
   <style>
     :root{
-      --bg:#0f1724;
+      --bg:#0f1724; /* dark navy */
       --card:#0b1220;
-      --accent:#7c3aed;
+      --accent:#06b6d4; /* teal */
       --muted:#94a3b8;
-      --glass: rgba(255,255,255,0.04);
+      --button:#0ea5a4;
+      --maxw:720px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{height:100%;margin:0}
     body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
-      background:linear-gradient(180deg,#071124 0%, #071833 60%); color:#e6eef8; -webkit-font-smoothing:antialiased;
-      display:flex; align-items:center; justify-content:center; padding:32px;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.06), transparent),
+                  radial-gradient(900px 400px at 90% 90%, rgba(99,102,241,0.04), transparent),
+                  var(--bg);
+      color: #e6eef8;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    .container{width:100%; max-width:420px}
-
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      text-align:center;
+    }
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.04);
-      padding:28px; border-radius:18px; box-shadow:0 6px 30px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius:16px;
+      padding:32px 26px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
     }
-
     .avatar{
-      width:92px; height:92px; border-radius:999px; overflow:hidden; margin:0 auto 16px; border:2px solid rgba(255,255,255,0.06);
+      width:112px;height:112px;border-radius:999px;display:inline-block;overflow:hidden;border:3px solid rgba(255,255,255,0.06);
+      margin-bottom:16px;
     }
-    .name{font-size:20px; font-weight:700; text-align:center; margin:0}
-    .handle{font-size:13px; color:var(--muted); text-align:center; margin-top:6px}
-    .bio{font-size:13px; color:var(--muted); text-align:center; margin:12px 0 18px}
-
-    .links{display:flex; flex-direction:column; gap:12px}
-    .link{
-      display:block; text-decoration:none; padding:12px 16px; border-radius:12px; background:var(--card); color:inherit;
-      border:1px solid rgba(255,255,255,0.03); box-shadow:0 2px 10px rgba(2,6,23,0.5); font-weight:600;
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{margin:6px 0 4px;font-size:20px}
+    p.bio{margin:0;color:var(--muted);font-size:14px}
+    .links{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+    .link-btn{
+      display:flex;align-items:center;gap:12px;justify-content:center;padding:12px 16px;border-radius:12px;text-decoration:none;color:inherit;font-weight:600;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);
       transition:transform .12s ease, box-shadow .12s ease;
     }
-    .link:hover{ transform:translateY(-4px); box-shadow:0 8px 28px rgba(2,6,23,0.55)}
-    .small{font-size:13px; color:var(--muted); font-weight:500}
-
-    .grid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-    .social{display:flex; gap:8px; justify-content:center; margin-top:16px}
-    .social a{width:42px; height:42px; display:inline-flex; align-items:center; justify-content:center; border-radius:10px; background:var(--glass); border:1px solid rgba(255,255,255,0.03); text-decoration:none}
-
-    footer{margin-top:16px; text-align:center; color:var(--muted); font-size:12px}
-
-    @media (max-width:460px){ body{padding:18px} .card{padding:20px} }
+    .link-btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+    .icon{width:20px;height:20px;opacity:0.95;display:inline-block}
+    .small{font-size:13px;color:var(--muted)}
+    .footer{margin-top:18px;color:var(--muted);font-size:13px}
+    /* Responsive tweaks */
+    @media (max-width:420px){
+      .card{padding:22px}
+      .avatar{width:92px;height:92px}
+    }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="card">
-      <div class="avatar">
-        <!-- Put your profile image URL here -->
-        <img src="https://avatars.githubusercontent.com/u/000?v=4" alt="avatar" style="width:100%;height:100%;object-fit:cover">
-      </div>
-
-      <h1 class="name">Shubhangam Pandey</h1>
-      <div class="handle">allinonemaster.com</div>
-      <p class="bio">Developer • Learner • Creator — links to my projects, socials and profiles.</p>
-
-      <div class="links">
-        <!-- Primary Linktree link -->
-        <a class="link" href="https://linktr.ee/shubhangampandey" target="_blank" rel="noopener">🔗 My Linktree</a>
-
-        <!-- Add other links you want to expose -->
-        <a class="link" href="#projects">💼 Projects / Portfolio</a>
-        <a class="link" href="#blog">📝 Blog / Articles</a>
-        <a class="link" href="#cv">📄 Resume / CV</a>
-
-        <div class="grid">
-          <a class="link small" href="#contact">✉️ Contact</a>
-          <a class="link small" href="#hire">🤝 Hire Me</a>
+  <main class="wrap">
+    <section class="card" aria-label="Linktree style landing">
+      <a href="https://linktr.ee/yourname" target="_blank" rel="noopener noreferrer" aria-hidden="true" style="display:inline-block;margin-bottom:10px">
+        <div class="avatar">
+          <!-- Replace with your profile image URL -->
+          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c3f2d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Profile image">
         </div>
-      </div>
+      </a>
 
-      <div class="social">
-        <!-- Replace hrefs with actual profiles -->
-        <a href="https://github.com/" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.5a3.5 3.5 0 0 0-.94-2.5c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 2S18.73 1.65 16 3.5a13.38 13.38 0 0 0-9 0C4.27 1.65 3.09 2 3.09 2A5.07 5.07 0 0 0 3 4.77c0 5.42 3.3 6.6 6.44 7A3.5 3.5 0 0 0 8.5 19.5V23"></path></svg>
-        </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-14h4v2"></path><rect x="2" y="9" width="4" height="11"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
-        </a>
-      </div>
+      <h1>Your Name</h1>
+      <p class="bio">Short bio — developer · designer · creator</p>
 
-      <footer>Made with ♥ • Host on GitHub Pages</footer>
+      <nav class="links" aria-label="Primary links">
+        <!-- Replace href values with your actual links -->
+        <a class="link-btn" href="https://linktr.ee/yourname" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Linktree
+        </a>
+
+        <a class="link-btn" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.87 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.01-2-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.3-1.69-1.3-1.69-1.06-.72.08-.71.08-.71 1.18.09 1.8 1.21 1.8 1.21 1.04 1.78 2.72 1.27 3.39.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.11-3.16 0 0 .98-.31 3.2 1.19a11.12 11.12 0 0 1 2.92-.39c.99.01 1.99.13 2.92.39 2.22-1.5 3.2-1.19 3.2-1.19.63 1.64.23 2.86.11 3.16.75.81 1.2 1.84 1.2 3.1 0 4.44-2.7 5.41-5.27 5.7.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.2.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
+          GitHub
+        </a>
+
+        <a class="link-btn" href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.48c0 1.1.88 1.98 1.98 1.98h.02C6.08 7.46 6.96 6.58 6.96 5.48 6.96 4.38 6.08 3.5 4.98 3.5zM3.5 8.98h3v11h-3v-11zM9.48 8.98h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6v6.46h-3v-5.72c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.19 1.48-2.19 3v5.82h-3v-11z"/></svg>
+          LinkedIn
+        </a>
+
+        <a class="link-btn" href="mailto:youremail@example.com" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.5h18v11H3z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6.5L12 13 3 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Email
+        </a>
+
+        <a class="link-btn" href="https://www.yoursite.com/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/></svg>
+          Resume / CV
+        </a>
+      </nav>
+
+      <div class="footer small">
+        Tip: Replace all <code>href</code> and the profile image with your own links before publishing.
+      </div>
     </section>
+
+    <p style="text-align:center;margin-top:14px;color:var(--muted);font-size:13px">Hosted on GitHub Pages — place this file at <code>index.html</code> in the repository root (or in <code>docs/</code>), then enable GitHub Pages.</p>
   </main>
 </body>
 </html>
